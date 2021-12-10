@@ -24,11 +24,9 @@ class GroceryForm extends Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <input
-     
           name="title"
           value={title}
           onChange={this.handleChange}
-          
           required 
           placeholder="Grocery Item"
         />
@@ -39,13 +37,13 @@ class GroceryForm extends Component {
           required 
           placeholder="Grocery Price"
         />
-          <input
+          {/* <input
           name="amount"
           value={amount}
           onChange={this.handleChange}
           required 
           placeholder="Grocery Amount"
-        />
+        /> */}
         <button type="submit">Submit</button>
       </form>
     )

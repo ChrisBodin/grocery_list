@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import GroceryCounter from './GroceryCounter';
 
 class Grocery extends Component {
   render() {
@@ -7,10 +8,10 @@ class Grocery extends Component {
       <li style={complete ? {...styles.completed} : null }>
         <h1>{title}</h1>
         <h3>{price}</h3>
-        <h4>Amount Needed: {amount}</h4>
-        <a href = "" >
+        {/* <h4>Amount Needed: {amount}</h4> */}
+        <GroceryCounter name={<h4>Amount Needed</h4>} /> 
          <button type="button">Complete</button>
-        </a>
+         <button type="button">Delete</button>
       </li>
     )
   }
