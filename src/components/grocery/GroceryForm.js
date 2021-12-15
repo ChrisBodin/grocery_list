@@ -1,26 +1,22 @@
 import { Component } from 'react';
 
 class GroceryForm extends Component {
-  state = { title: '', price: '', amount: '', complete: false }
+  state = { title: '', price: '', amount: '', completed: false }
 
   handleChange = (e) => {
     const { name, value } = e.target
     this.setState({ [name]: value })
-
   }
 
    
   handleSubmit = (e) => {
-    
     e.preventDefault()
-   
     this.props.addGrocery(this.state)
-    
     this.setState({ title: '', price: '', amount: '', complete: false })
   }
 
   render() {
-    const { title, price, amount } = this.state
+    const { title, price } = this.state
     return (
       <form onSubmit={this.handleSubmit}>
         <input
@@ -37,13 +33,6 @@ class GroceryForm extends Component {
           required 
           placeholder="Grocery Price"
         />
-          {/* <input
-          name="amount"
-          value={amount}
-          onChange={this.handleChange}
-          required 
-          placeholder="Grocery Amount"
-        /> */}
         <button type="submit">Submit</button>
       </form>
     )

@@ -3,16 +3,17 @@ import GroceryCounter from './GroceryCounter';
 
 class Grocery extends Component {
   render() {
-    const { id, title, price, amount, complete } = this.props
+    const { id, title, price, completed, groceryClick } = this.props
     return (
-      <li style={complete ? {...styles.completed} : null }>
-        <h1>{title}</h1>
-        <h3>{price}</h3>
-        {/* <h4>Amount Needed: {amount}</h4> */}
+      <>
+        <li style={ completed ? {...styles.grocery, ...styles.completed} : styles.item } 
+      onClick={ () => groceryClick(id) }>
+          <h1>{title}</h1>
+         <h3>${price}</h3>
+       </li>
         <GroceryCounter name={<h4>Amount Needed</h4>} /> 
-         <button type="button">Complete</button>
          <button type="button">Delete</button>
-      </li>
+      </>
     )
   }
 }

@@ -1,6 +1,6 @@
 import Grocery from './Grocery';
 
-const GroceryList = ({ groceries, listName}) => {
+const GroceryList = ({ groceries, listName, groceryClick}) => {
   return (
     <>
       <h1>{listName} List</h1>
@@ -8,7 +8,7 @@ const GroceryList = ({ groceries, listName}) => {
         {
           groceries.map( grocery =>
 
-            <Grocery {...grocery} />
+            <Grocery key={grocery.id} {...grocery} groceryClick={groceryClick} />
           )
         }
       </ul>
